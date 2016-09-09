@@ -1,0 +1,43 @@
+﻿#mainDiv {
+    background-color: #EFEFEF;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    font-family: "Arial", Times, serif;
+    color: #363636;
+}
+
+#diskList > ul {
+    list-style-type: none;
+}
+
+#diskList > ul > li {
+    height: 30px;
+}
+
+#statisticTable {
+    width: 50%;
+    margin: 5px auto;
+    border: 2px solid #D5D5D5;
+    border-collapse: collapse;
+    text-align: center;
+    
+}
+
+th {
+    background-color: #D5D5D5;
+    color: white;
+    padding: 5px;
+}
+
+td {
+    padding: 10px;
+}
+
+
+#folders > ul {
+    border: 2px solid #E2E2E2;
+    border-collapse: collapse;
+    list-style-type: none;
+    padding: 10px;
+}

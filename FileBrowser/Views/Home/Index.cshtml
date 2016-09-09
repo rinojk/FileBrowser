@@ -1,0 +1,46 @@
+﻿<html>
+<head>
+    <title>File Browser Web App</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js" type="text/javascript"></script>
+    <script src="../../scripts/Angular/app.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../../Styles/styles.css">
+</head>
+<body>
+
+<div ng-app="fileBrowserApp" ng-controller="mainController" ng-init="init()" id="mainDiv">
+    <div ng-show="isDiskList" id="diskList">
+        <p align="center"><b>List of disks:</b>
+        </p>
+        <br/>
+        <ul>
+            <li ng-repeat="disk in disks">
+                <span ng-click="goToPath(disk)">{{disk}}</span>
+            </li>
+        </ul>
+    </div>
+    <div ng-show="!isDiskList" id="folders">
+        <div>
+            <table id="statisticTable" ng-show="!loading">
+                <tr>
+                    <th>Less 10Mb</th>
+                    <th>10Mb-50Mb</th>
+                    <th>More 100Mb</th>
+                </tr>
+                <tr>
+                    <td>{{fileLess10MbCount}}</td>
+                    <td>{{file10To50MbCount}}</td>
+                    <td>{{fileMore100MbCount}}</td>
+                </tr>
+            </table>
+        </div>
+        <br/>
+        <p><b>Current path:</b> {{data.currentFolder}}</p>
+        <ul>
+            <li><span ng-click="goToPrevFolder()">...</span></li>
+            <li ng-repeat="folder in data.folders"><span ng-click="goToPath(data.currentFolder+'\\'+folder)">{{folder}}</span></li>
+            <li ng-repeat="file in data.files"><a ng-href="{{data.currentFolder+'\\'+file}}" target="_blank">{{file}}</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
